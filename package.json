@@ -1,0 +1,12 @@
+{
+  "name": "agent-resource-browser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "可离线检索的 Agent 开发公开资料链接库",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "check": "node scripts/build.cjs --check",
+    "test": "node --test tests/core.test.cjs"
+  },
+  "engines": { "node": ">=20" }
+}

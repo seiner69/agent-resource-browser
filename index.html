@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="可离线检索的 Agent 开发资料链接库，支持关键词、厂商与主题筛选。">
+  <title>Agent 开发资料库</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="core.js" defer></script>
+  <script src="data/resources.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="eyebrow">AGENT RESOURCE BROWSER · <span id="date">资料快照</span></div>
+  <h1>Agent 开发资料库</h1>
+  <p>从公开技术文章、开发文档、源码示例和课程入口中，查找工具、上下文、记忆、评测与安全资料。索引可离线检索，阅读原文需要联网。</p>
+  <div class="stats"><div><strong id="total">—</strong><span>去重资料链接</span></div><div><strong id="featured-total">—</strong><span>精选入口</span></div><div><strong id="groups">—</strong><span>资料分类</span></div></div>
+  <div class="downloads"><a href="data/resources.json" download="resources.json">下载 JSON 索引</a><a href="README.md">使用与维护说明</a></div>
+</header>
+<main class="layout">
+  <div class="controls">
+    <div class="fields">
+      <label>关键词<input id="query" type="search" placeholder="搜索 MCP、Agent Loop、记忆、评测…" autocomplete="off"></label>
+      <label>厂商<select id="vendor"><option value="">全部厂商</option><option>OpenAI</option><option>Anthropic</option><option>共同生态</option></select></label>
+      <label>主题<select id="topic"><option value="">全部主题</option></select></label>
+    </div>
+    <div class="toggles"><label><input id="featured" type="checkbox" checked> 只看精选入口</label><button id="all" type="button">查看全部资料</button><button id="reset" type="button">重置筛选</button></div>
+  </div>
+  <div class="result-bar"><span id="count" aria-live="polite">正在加载资料…</span><span>保留原标题 · 点击打开来源网页</span></div>
+  <div id="cards"></div>
+  <div id="empty" hidden>没有匹配项。尝试英文关键词，或取消“只看精选入口”。</div>
+  <button id="more" type="button" hidden>显示更多</button>
+  <details><summary>范围与快照说明</summary>
+    <p>这是 2026-10-26 整理的链接快照，含 OpenAI、Anthropic 相关公开站点及 MCP、Agent Skills 生态标准。条目可能是文档章节、课程入口或代码示例，不等同于独立文章数量。</p>
+    <p>仅提供标题、链接和分类，不包含网页正文或第三方代码。精选顺序是这份快照的整理结果。链接有效性、产品状态与接口参数请以当前来源网页为准；本工具不自动联网更新，也不宣称覆盖全部历史资料。</p>
+  </details>
+  <noscript><p>请启用 JavaScript；也可以直接打开 data/resources.json 阅读链接索引。</p></noscript>
+</main>
+</body>
+</html>
